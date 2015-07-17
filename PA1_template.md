@@ -155,7 +155,9 @@ rowsNA
 
 ```r
 # strategy for filling in "steps" missing values in the dataset
-# with mean of that 5-min interval
+# I choose to fill in with mean of that 5-min interval
+# which is store in table$columna -> int$avgsteps
+# calculated in previous step
 siNA <- sqldf("select a.date, a.interval, b.avgsteps
                 from activity a, int b
                 where a.interval = b.interval
